@@ -1,0 +1,85 @@
+version: 2
+
+sources:
+  - name: retrocinevr
+    database: dbtworkshop
+    schema: retrocinevr
+    tables:
+      - name: movies
+        description: One record per movie, will not change regularly
+        columns:
+          - name: id
+            description: Primary key of the movies table
+            tests:
+              - unique
+              - not_null
+          - name: title
+          - name: synopsis
+          - name: VR_version_date
+          - name: rating
+          - name: cover_image
+      - name: customers
+        description: One record per customer, can change daily
+        columns:
+          - name: id
+            description: Primary key of the customers table
+            tests:
+              - unique
+              - not_null
+          - name: first_name
+            description: The first name of the customer
+          - name: last_name
+            description: The last name of the customer
+          - name: email
+            description: The email address of the customer
+      - name: cinemas
+        description: One record per cinema, will not change regularly
+        columns:
+          - name: id
+            description: Primary key of the cinemas table
+            tests:
+              - unique
+              - not_null
+          - name: name
+          - name: location
+          - name: total_seats
+      - name: rentals
+        description: One record per rental, multiple new rentals must be added per day
+        columns:
+          - name: id
+            description: Primary key of the rentals table
+            tests:
+              - unique
+              - not_null
+          - name: movie_id
+            description: Reference to an existing movie
+          - name: customer_id
+            description: Reference to an existing customer
+          - name: rental_date
+            description: The date the rental was initiated, format of the date is a string yyyyMMdd
+          - name: rental_fee
+            description: An amount in euros, at the moment it is a constant amount, but this will change.
+          - name: _etl_loaded_at
+            description: Timestamp when the record was inserted into datawarehouse
+      - name: tickets
+        description: One record per ticket, multiple new tickets must be added per day
+        columns:
+          - name: id
+            description: Primary key of the tickets table
+            tests:
+              - unique
+              - not_null
+          - name: movie_id
+            description: Reference to an existing movie
+          - name: customer_id
+            description: Reference to an existing customer
+          - name: cinema_id
+            description: Reference to an existing cinema
+          - name: booking_date
+            description: The date the ticket is valid, format of the date is a string yyyyMMdd
+          - name: show_time
+            description: The time the movie is booked in the cinema format of the time is a string HH:mm
+          - name: ticket_price
+            description: An amount in euros.
+          - name: _etl_loaded_at
+            description: Timestamp when the record was inserted into datawarehouse

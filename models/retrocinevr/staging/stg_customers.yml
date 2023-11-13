@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: One record per customer
+    columns:
+      - name: customer_id
+        description: Primary key
+      - name: first_name
+        description: First name of the customer
+      - name: last_name
+        description: Last name of the customer
+      - name: email
+        description: Email address of the customer
+  
