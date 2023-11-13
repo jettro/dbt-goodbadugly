@@ -37,6 +37,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   retrocinevr:
-    +materialized: table
+    raw:
+      +materialized: table
     staging:
       +materialized: view

@@ -1,0 +1,23 @@
+models:
+  - name: top_cinemas
+    description: Top cinemas.
+    columns:
+      - name: cinema_id
+        description: The unique key of the cinemas mart.
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Name of the cinema.
+      - name: location
+        description: Location of the cinema.
+      - name: total_seats
+        description: Number of available seats in the cinema.
+      - name: ticket_count
+        description: The amount of times the movie was ticketed.
+        tests:
+          - not_null
+      - name: total_ticket_fee
+        description: The total amount of money that the cinema generated.
+        tests:
+          - not_null
