@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_rentals
+    description: One record per rental, each rental references a customer and a movie
+    columns:
+      - name: rental_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: movie_id
+      - name: customer_id
+      - name: rental_date
+      - name: formatted_rental_date
+        description: Formats the string from rental_date into a real date
+      - name: rental_fee
+      - name: _etl_loaded_at

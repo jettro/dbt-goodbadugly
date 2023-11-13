@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_cinemas
+    description: One record per cinema
+    columns:
+      - name: cinema_id
+        description: Primary key
+      - name: name
+        description: Name of the cinema
+      - name: location
+        description: Location of the cinema, usually the city
+      - name: total_seats
+        description: Number of seats to watch movies
+  

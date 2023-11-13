@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_movies
+    description: One record per movie
+    columns:
+      - name: movie_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: title
+      - name: synopsis
+      - name: VR_version_date
+      - name: rating
+      - name: cover_image
+
+  
