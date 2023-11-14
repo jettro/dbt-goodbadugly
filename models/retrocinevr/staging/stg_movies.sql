@@ -6,11 +6,11 @@ movies as (
 staged as (
     select
         id as movie_id,
-        title,
-        synopsis,
+        replace(title, '"', '') as title,
+        replace(synopsis, '"', '') as synopsis,
         VR_version_date,
         rating,
-        cover_image
+        replace(cover_image, '"', '') as cover_image
 
     from movies
 )

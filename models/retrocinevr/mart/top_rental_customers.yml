@@ -1,0 +1,17 @@
+models:
+  - name: top_rental_customers
+    description: Customers data with the amount of rentals that they did.
+    columns:
+      - name: customer_id
+        description: The unique key for each customer.
+        tests:
+          - not_null
+          - unique
+      - name: rental_count
+        description: The amount of rentals that the customer did.
+        tests:
+          - not_null
+      - name: total_rental_fee
+        description: The total amount of money that the customer spent in rentals.
+        tests:
+          - not_null
