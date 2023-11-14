@@ -1,0 +1,25 @@
+models:
+  - name: top_rented_movies
+    description: Top rented movies data mart, offering key details for each movie.
+    columns:
+      - name: movie_id
+        description: The unique key of the movies mart.
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: Title of the movie.
+      - name: synopsis
+        description: Summary of the plot.
+      - name: vr_version_date
+        description: The date the VR version of the movie became available.
+      - name: rating
+        description: The average rating of the movie.
+      - name: rental_count
+        description: The amount of times the movie was rented.
+        tests:
+          - not_null
+      - name: total_rental_fee
+        description: The total amount of money that the movie generated in rentals.
+        tests:
+          - not_null

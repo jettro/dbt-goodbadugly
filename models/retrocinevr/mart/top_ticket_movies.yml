@@ -1,0 +1,25 @@
+models:
+  - name: top_ticket_movies
+    description: Top ticket movies data mart, offering key details for each movie.
+    columns:
+      - name: movie_id
+        description: The unique key of the movies mart.
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: Title of the movie.
+      - name: synopsis
+        description: Summary of the plot.
+      - name: vr_version_date
+        description: The date the VR version of the movie became available.
+      - name: rating
+        description: The average rating of the movie.
+      - name: ticket_count
+        description: The amount of times the movie was ticketed.
+        tests:
+          - not_null
+      - name: total_ticket_fee
+        description: The total amount of money that the movie generated in tickets.
+        tests:
+          - not_null
