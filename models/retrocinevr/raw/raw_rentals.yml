@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: rentals
+    description: One record per rental, multiple new rentals must be added per day
+    columns:
+      - name: id
+        description: Primary key of the rentals table
+        tests:
+          - unique
+          - not_null
+      - name: movie_id
+        description: Reference to an existing movie
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('raw_movies')
+      - name: customer_id
+        description: Reference to an existing customer
+        tests:
+          - not_null
+      - name: rental_date
+        description: The date the rental was initiated, format of the date is a string yyyyMMdd
+      - name: rental_fee
+        description: An amount in euros, at the moment it is a constant amount, but this will change.
+      - name: _etl_loaded_at
+        description: Timestamp when the record was inserted into datawarehouse
