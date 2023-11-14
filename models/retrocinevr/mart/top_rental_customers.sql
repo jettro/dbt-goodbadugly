@@ -21,7 +21,9 @@ rental_summary as (
 
 grouped_rentals as (
     select
-        customers.*,
+        customers.customer_id,
+        customers.email,
+        customers.first_name || ' ' || customers.last_name as customer_name,
         rental_summary.rental_count,
         rental_summary.total_rental_fee
     from customers
