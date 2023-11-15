@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: raw_tickets
+    description: One record per ticket, multiple new tickets must be added per day
+    columns:
+      - name: id
+        description: Primary key of the tickets table
+        tests:
+          - unique
+          - not_null
+      - name: movie_id
+        description: Reference to an existing movie
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('raw_movies')
+      - name: customer_id
+        description: Reference to an existing customer
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('raw_customers')
+      - name: cinema_id
+        description: Reference to an existing cinema
+        tests:
+          - not_null
+          - relationships:
+              field: id
+              to: ref('raw_cinemas')
+      - name: booking_date
+        description: The date the ticket is valid, format of the date is a string yyyyMMdd
+      - name: show_time
+        description: The time the movie is booked in the cinema format of the time is a string HH:mm
+      - name: ticket_price
+        description: An amount in euros.
+      - name: _etl_loaded_at
+        description: Timestamp when the record was inserted into datawarehouse

@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: raw_cinemas
+    description: One record per cinema, will not change regularly
+    columns:
+      - name: id
+        description: Primary key of the cinemas table
+        tests:
+          - unique
+          - not_null
+      - name: name
+      - name: location
+      - name: total_seats

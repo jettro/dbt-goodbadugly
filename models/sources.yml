@@ -53,6 +53,8 @@ sources:
               - not_null
           - name: movie_id
             description: Reference to an existing movie
+            tests:
+              - not_null
           - name: customer_id
             description: Reference to an existing customer
           - name: rental_date

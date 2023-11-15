@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: raw_movies
+    description: One record per movie
+    columns:
+      - name: id
+        description: Primary key of the rentals table
+        tests:
+          - unique
+          - not_null
+      - name: title
+      - name: synopsis
+      - name: VR_version_date
+      - name: rating
+      - name: cover_image
