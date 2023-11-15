@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: rentals
+  - name: raw_rentals
     description: One record per rental, multiple new rentals must be added per day
     columns:
       - name: id
@@ -20,6 +20,9 @@ models:
         description: Reference to an existing customer
         tests:
           - not_null
+          - relationships:
+              field: id
+              to: ref('raw_customers')
       - name: rental_date
         description: The date the rental was initiated, format of the date is a string yyyyMMdd
       - name: rental_fee
