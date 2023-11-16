@@ -18,4 +18,4 @@ staged as (
     from tickets
 )
 
-select * from staged
+select * from staged order by booking_date desc, ticket_id desc

@@ -16,3 +16,9 @@ models:
         description: Formats the string from rental_date into a real date
       - name: rental_fee
       - name: _etl_loaded_at
+    tests:
+      - elementary.freshness_anomalies:
+          timestamp_column: _etl_loaded_at
+          time_bucket:
+            period: day
+            count: 1
