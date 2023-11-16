@@ -3,6 +3,16 @@ version: 2
 models:
   - name: stg_tickets
     description: One record per ticket, each ticket references a customer, a movie, and a cinema
+    config:
+      elementary:
+        timestamp_column: _etl_loaded_at
+    tests:
+      - elementary.freshness_anomalies:
+          tags: ['elementary']
+          time_bucket:
+            period: day
+            count: 1
+      - elementary.schema_changes
     columns:
       - name: ticket_id
         description: Primary key
@@ -18,3 +28,4 @@ models:
       - name: show_time
       - name: ticket_price
       - name: _etl_loaded_at
+

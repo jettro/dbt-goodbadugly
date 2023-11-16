@@ -42,3 +42,8 @@ models:
         +materialized: table
       staging:
         +materialized: view
+  elementary:
+    ## elementary models will be created in the schema '<your_schema>_elementary'
+    +schema: "dbt_cloud_elementary"
+    ## To disable elementary for dev, uncomment this:
+    # enabled: "{{ target.name in ['prod','analytics'] }}"
