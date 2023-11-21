@@ -13,6 +13,7 @@ staged as (
         TO_DATE(booking_date, 'YYYYMMDD') as formatted_booking_date,
         show_time,
         ticket_price,
+        num_tickets,
         _etl_loaded_at
 
     from tickets
