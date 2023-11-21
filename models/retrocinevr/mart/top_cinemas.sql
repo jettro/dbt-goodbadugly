@@ -12,8 +12,8 @@ tickets as (
 tickets_summary as (
     select
         cinema_id,
-        count(ticket_id) as ticket_count,
-        sum(ticket_price) as total_ticket_fee
+        sum(num_tickets) as ticket_count,
+        sum(ticket_price*num_tickets) as total_ticket_fee
     from tickets
 
     group by 1

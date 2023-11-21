@@ -83,5 +83,7 @@ sources:
             description: The time the movie is booked in the cinema format of the time is a string HH:mm
           - name: ticket_price
             description: An amount in euros.
+          - name: num_tickets
+            description: The amount of tickets in the group
           - name: _etl_loaded_at
             description: Timestamp when the record was inserted into datawarehouse

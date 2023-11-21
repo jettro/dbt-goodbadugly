@@ -12,7 +12,6 @@ models:
           time_bucket:
             period: day
             count: 1
-      - elementary.schema_changes
     columns:
       - name: ticket_id
         description: Primary key
@@ -27,5 +26,6 @@ models:
         description: Formats the string from booking_date into a real date
       - name: show_time
       - name: ticket_price
+      - name: num_tickets
       - name: _etl_loaded_at
 
