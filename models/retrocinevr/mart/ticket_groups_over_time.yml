@@ -1,0 +1,17 @@
+models:
+  - name: ticket_groups_over_time
+    description: Shows the small, medium, large and extreme ticket groups over time.
+    columns:
+      - name: booking_date
+        description: The day to count ticket groups for
+        tests:
+          - not_null
+          - unique
+      - name: small_groups_count
+        description: Number of small groups that bought tickets today.
+      - name: medium_groups_count
+        description: Number of medium groups that bought tickets today.
+      - name: large_groups_count
+        description: Number of large groups that bought tickets today.
+      - name: extreme_groups_count
+        description: Number of extreme groups that bought tickets today.

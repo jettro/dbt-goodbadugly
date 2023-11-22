@@ -27,5 +27,13 @@ models:
       - name: show_time
       - name: ticket_price
       - name: num_tickets
+      - name: small_ticket
+        description: For a group smaller than 4 people
+      - name: medium_ticket
+        description: For a group from 4 to 10 people
+      - name: large_ticket
+        description: For a group from 10 to 100 people
+      - name: extreme_ticket
+        description: For a group of more than 99 people
       - name: _etl_loaded_at
 
